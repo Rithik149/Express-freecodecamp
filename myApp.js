@@ -44,11 +44,15 @@ app.get("/:word/echo", (req, res) => {
 });
 
 app.get('/name',(req,res)=>{
-  var firstname = req.query.first
-  var lastname = req.query.last
+  // var firstname = req.query.first // more simple declaring
+  // var lastname = req.query.last
+
   var { first:firstname , last:lastname }=req.query; //Extract the first property from req.query and assign it to a new variable called firstname.
   res.json({name:`${firstname} ${lastname}`})
 })
+
+
+
 
 app.use("/public", express.static(__dirname + "/public"));
 
